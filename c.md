@@ -19,8 +19,13 @@
     data : global variable
     rodata : string 
     .txt : code
+    function package : most use in project(item)
+##string
 
-
+    strcpy(a,hello); : strcpy(a,a+1);  endless loop
+    strlen(a);
+    strcat(a,b);  :  memory,a > a+b
+    strcmp(a,b);
 
 
 
@@ -40,8 +45,10 @@
 
 ##function point 
 
-    typedef int(*f)(void) : f, data type; 
-    typedef void(*fun_t)(void) : ((fun_t)0x800)(); fun_t fun; fun = 0x800; fun(); jump to 0x800 run;    #define myint int * : myint p,q; q, int; 
+    typedef int(*f)(void) : f, data type; only typedef, can use (f)fun_name();
+    typedef void(*fun_t)(void) : ((fun_t)0x800)(); equal : void (*fun)(void); fun = 0x800; fun(); jump to 0x800 run;    #define myint int * : myint p,q; q, int; 
+    
+
     int (*fun)(int,int); fun = print (get the address); a= fun(2,3);
     arr[i].fun = print; a = arr[i].fun(2,3);
     f = *f ; solid
@@ -57,7 +64,13 @@
     scanf("%c",&a); : '5',53
     scanf("%d %d\n",&a,&b); : input form
     scanf("%lf"); : double
-    
+
+##atoi
+
+    int atoi(char *string) : arrary to integrate, #include<stdlib.h>
+    int c = atoi("24")+("34");
+    c = 58;
+
 ## force transition
 
     (float *)&a; : previous a is double,  according to float type to read data
@@ -113,9 +126,42 @@
     char a[] = {97,98,99};  : 'a','b'
     int a[] = {97,98,99};   :  97 ,98
 
+##linked list
 
+    struct stu
+    {
+        int id;
+        int chinese;
+        char name[256];
+        struct stu *next;
+    };
+    struct stu *head;
+    head = (struct stu *)malloc(sizeof(struct stu));
+    head->id = 1;
+    head->chinese = 100;
+    head->next = null;
 
+    struct stu *p;
+    p = (struct stu *)malloc(sizeof(struct stu));
+    p->id = 2;
+    p->chinese = 90;
+    p->next = null;
 
+    head->next = p;
+    
+    delete node :
+
+    struct stu *q;
+    q = p->next;
+    p->next = p->next->next;
+    free(q);
+    q = NULL;
+
+    a = a->next;
+    b = b->next;
+
+    a = b;
+    b = a->next; : b next;  a become previous b;
 
 
 

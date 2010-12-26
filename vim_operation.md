@@ -46,7 +46,16 @@
     cn : go to next error
     cp : go to pre error
 
-
+    CFLAGS LDFLAGS : variable
+    CFLAGS= -Wall -g -c -linclude
+    $(CFLAGS) : get varibale value
+    -Wall : warning all ?
+    -M : check file.c  related system headfile and custom headfile
+    -MM : only check custom headfile
+    $< : the first prerequisite
+    $^ : all prerequisites
+    $@ : target in rule
+    $? : updated prerequisites
 
 
 
