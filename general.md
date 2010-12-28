@@ -24,6 +24,7 @@
     find . -name filename :
     sudo / -name libflashplayer.so : good , than locate
     grep -ni hello */* :
+    grep -ni hello * :  good use
     history | grep command 
     sudo !! : add permit to command
     locate : check filelist, so fast

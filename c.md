@@ -20,6 +20,7 @@
     rodata : string 
     .txt : code
     function package : most use in project(item)
+    sudo apt-get install manpages-dev
 ##string
 
     strcpy(a,hello); : strcpy(a,a+1);  endless loop
@@ -64,6 +65,12 @@
     scanf("%c",&a); : '5',53
     scanf("%d %d\n",&a,&b); : input form
     scanf("%lf"); : double
+##fgets
+
+    char *fgets(char *a,int size,FILE* stream);  :  if ok ; return a, or NULL ;end :1 ,'\n',2,size-1, 3, EOF
+    fputs(const *s,FILE *stream); s write to file 
+
+
 
 ##atoi
 
@@ -179,14 +186,26 @@
     p->next = q->next;
     q->next = p;
 
+##file
 
+    ascii file :  128 , 3 byte;  
+    binary file : 128 , 1 byte;
+    EOF : file end, End Of File  -1, only in ascii file(0~255)
 
+    FILE *src,*dest;
+    src = ("a.txt","r");
+    dest = ("b.txt","w");
+    int a = fgetc(dest);
+    if(EOF == a) ; file end
+    a = feof(dest);
+    a  == 1 : file end
+    fputc(a,dest);
 
+    fclose(src);
+    fclose(dest);
 
-
-
-
-
+    '\n' 10 : every file end 
+    r,w,a,r+,w+,a+
 
 
 
