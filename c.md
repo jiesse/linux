@@ -71,6 +71,15 @@
     int c = atoi("24")+("34");
     c = 58;
 
+##srand
+
+    #include<stdlib.h>
+    #include<time.h>
+    void srand(unsigned seed)
+    srand(seed);
+    a[i] = rand();
+
+
 ## force transition
 
     (float *)&a; : previous a is double,  according to float type to read data
@@ -97,7 +106,9 @@
     struct info a;
     p = &a;
     so (*p).id = p->id
-
+    
+    typedef struct stu *link   :  a point  , it can define other struct points ,its memory is 4
+    typedef struct stu link    :  a struct , it can define other struct 
 
 
 ##union
@@ -163,7 +174,10 @@
     a = b;
     b = a->next; : b next;  a become previous b;
 
+    loop linked list :
 
+    p->next = q->next;
+    q->next = p;
 
 
 

@@ -22,10 +22,17 @@
     find * | grep flash
     find . | grep ~
     find . -name filename :
+    sudo / -name libflashplayer.so : good , than locate
     grep -ni hello */* :
     history | grep command 
     sudo !! : add permit to command
     locate : check filelist, so fast
+
+## gladder (over the wall)
+    q_ba_zai_xian_dai_li : go youtube
+    www.vpncup.com : go youtube
+    freedom gate : www.dongtaiwang.com
+
 ##chinese input method
 
     sudo apt-get install language-pack-zh
