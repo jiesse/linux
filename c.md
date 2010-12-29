@@ -68,7 +68,7 @@
 ##fgets
 
     char *fgets(char *a,int size,FILE* stream);  :  if ok ; return a, or NULL ;end :1 ,'\n',2,size-1, 3, EOF
-    fputs(const *s,FILE *stream); s write to file 
+    fputs(const *s,FILE *stream); s write to file, '\n' , also write into; '\0', over; 
 
 
 
@@ -206,6 +206,27 @@
 
     '\n' 10 : every file end 
     r,w,a,r+,w+,a+
+    hexdump a.out :  check a.out comment
+    
+    fgets(a,256,src);  ; read 255 bytes , and add '\0' end , every time read one line :be fit for ascii files 
+    if(feof(src))break;
+    fputs(a,dest);
+
+    int fread(void *ptr,size_t size, size_t numb, FILE *stream)   : no adding '\0' end ;for ascii files or binary files
+    fwrite(void *ptr,size_t size, size_t numb, FILE *stream)
+    len = fread(c,10,10,src); : had read numb successfully
+    if(feof(src))break;
+    fwrite(c,10,10,dest);   universally, size, numb  is 1;
+
+    fflush(dest); focus write data to file from buff while the process doesn't end 
+
+    fopen("/home/jiesse/a.txt","w");
+    fprintf(dest,"%s %d %d",p->name,p->chinese,p->math);
+    fclose(dest);
+
+    fopen("/home/jiesse/a.txt","r");
+    fscanf(src,"%s %d %d",p->name,&p->chinese,&p->math);
+    fclose(src);
 
 
 
