@@ -1,4 +1,4 @@
-#c study
+#c study  like a computer
 
 
 ##base
@@ -245,21 +245,77 @@
 
 ##variable argument
 
-    printf(const char * format, ...)  : format, must have , acording it to find other argument; and format's address is least
+    printf(const char * format, ...)  : format, must have , acording it to find other argument; and format's address is least in stack ,all arguments address put into stack
     int *p = (int *)&format;
     p = p + 1;   now, *p is the second argument's address, stack address own 4 bytes to point arguments which in roldata
     
     char *p = &format;
     char *p = (char *)&format;
     p = p + 4;   now, *(int *)p is the second argument's address ,*p not work,
-    because argument's address own 4 bytes
+    because argument's address own 4 bytes in stack
     
     detail message and application in var_argu.c
     printf("%s %d",a,b);   :
 
+    #include<stdarg.h>
+
+    void function(void format, ...) : format, int, char, point, all ok
+    va_list ap;
+    var_start(ap,format);
+
+    add(int begin, ...)
+    va_list ap;
+    var_start(ap,begin);
+    add += va_arg(ap,int);
+    va_end(ap);
+
+    va_start(va_list ap, last);  ap type : char *
+    ap = &last + size(last)    : function size() :stack, (sizeof(last) + 3 )&(~3); means, in stack, char own 4 bytes, int own 4bytes , but if last is 8 bytes, size(last)  is 8 bytes
+    va_arg(ap,type)  : type = *(type*)((ap += sizeof(type) - sizeof(type))
+    va_end(ap)  : ap = NULL;
+
+##pass argument
+
+    void m(char **x)
+    {
+        char *p = malloc(100) ;
+        *x = p;
+    }
+    main()
+    {
+        char *p;
+        m(&p);
+    }
+    now, p point to heap memory
+
+    void m(char *x)
+    {
+        char*p = malloc(100) ;
+        x = p; 
+    }
+    main()
+    {
+        char *p;
+        m(p);
+    }
+    now, p point random
 
 
+    char *p;
+    char **q = &p;
+    or
+    char *p;
+    char **q;
+    q = &p;
 
+##link
+
+    gcc -c -g main.c   : check code ,include c code 
+    objdump main.o -dS : check the code 
+    gcc -c main.c -I./lib   : lib include main.c's including files
+    
+    ar rs libstack.a push.o stack.o  : static library
+    gcc main.o -L./lib -lstack  : L, path; l, name, libstack.a  : call static library
 
 
 
