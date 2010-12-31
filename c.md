@@ -228,6 +228,38 @@
     fscanf(src,"%s %d %d",p->name,&p->chinese,&p->math);
     fclose(src);
 
+##bit
+
+    & | ! ~
+    & : set bit  0
+    | : set bit  1
+    ^ : 1 = 1^0;
+    
+    swap a b
+    a = a^b;
+    b = a^b;
+    a = a^b;
+    
+    <<  : symbol bit not move
+    >>   
+
+##variable argument
+
+    printf(const char * format, ...)  : format, must have , acording it to find other argument; and format's address is least
+    int *p = (int *)&format;
+    p = p + 1;   now, *p is the second argument's address, stack address own 4 bytes to point arguments which in roldata
+    
+    char *p = &format;
+    char *p = (char *)&format;
+    p = p + 4;   now, *(int *)p is the second argument's address ,*p not work,
+    because argument's address own 4 bytes
+    
+    detail message and application in var_argu.c
+    printf("%s %d",a,b);   :
+
+
+
+
 
 
 
