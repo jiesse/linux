@@ -21,6 +21,17 @@
     .txt : code
     function package : most use in project(item)
     sudo apt-get install manpages-dev
+
+##flush stdin
+
+    int fflush(FILE*stream)
+    fflush(stdin);  :  vc ok , but gcc not work
+    setbuf();          not suggest to use under gcc
+    int c; while((c=getchar())!= '\n'&& c!=EOF) ;effect fflush(); flush stream;
+    
+    while(!scanf("%d%d",&a,&b))
+          while((c=getchar())!= '\n'&&c !=EOF);   ok,
+    
 ##string
 
     strcpy(a,hello); : strcpy(a,a+1);  endless loop
@@ -65,6 +76,11 @@
     scanf("%c",&a); : '5',53
     scanf("%d %d\n",&a,&b); : input form
     scanf("%lf"); : double
+    scanf("%[^\n]",string)  :  receive a string only meet enter while  over ,
+    the same effect with fgets(string,256,stdin)
+
+
+
 ##fgets
 
     char *fgets(char *a,int size,FILE* stream);  :  if ok ; return a, or NULL ;end :1 ,'\n',2,size-1, 3, EOF
