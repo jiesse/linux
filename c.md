@@ -22,6 +22,12 @@
     function package : most use in project(item)
     sudo apt-get install manpages-dev
 
+    warning : the format expect type ... but argument has type ...: solve way, force transition type
+    float : len = 4
+    double : len = 8
+    short : len =2
+    long :  len = 4
+
 ##flush stdin
 
     int fflush(FILE*stream)
@@ -78,6 +84,11 @@
     scanf("%lf"); : double
     scanf("%[^\n]",string)  :  receive a string only meet enter while  over ,
     the same effect with fgets(string,256,stdin)
+    
+    scanf("%[1234567890]",string) : only get  stdin   1234567890 
+    scanf("%[^12345]",string) :    meet 12345 any letter , stop receive
+    scanf("%[a-z]",string);
+    scanf("%20s",string);
 
 
 
@@ -93,6 +104,36 @@
     int atoi(char *string) : arrary to integrate, #include<stdlib.h>
     int c = atoi("24")+("34");
     c = 58;
+
+    atof(argv[i]);
+
+
+##sprintf
+
+    <stdio.h>
+    int sprintf(char*buffer, const char *format, ...) : return the buffer's len 
+    sprintf(a,"%d",12345); now a[] = "12345"  len = 5
+    int i = 100; len = sprintf(a,"%.2f",(double)i); len = 6  "100.00"
+    %f : double to float
+    %x : integrate to hex (a-z)
+    %X : integrate to hex (A-Z)
+    %o : integrate to ocotonary
+    %s : to string
+    sprintf(buffer,"%08",123); print  00000123
+    sprintf(buffer,"-10f",3.1415926789);
+
+    sprintf(buffer,"string: %s\n","hello"); : print , string: hello, then enter  : the same effect strcat
+    char i[] = "i";
+    char you[] = "you";
+    sprintf(buffer,"%s love %s",i,you);
+    sprintf(buffer,"%.3s%.2s","abcdef","uiopk");  print, abcui, detail check www.baidu.com 
+    sprintf(buffer,"%.*s%.*s",3,"abcdef",2,"uiopk"); the same effect previous instruction
+    sprintf(buffer,"%.*s%.*s",sizeof("abcdef"),"abcdef",sizeof(uiopk),"uiopk");
+
+    sprintf() : can use to strcat many times, detail useage acordding to baidu
+
+    strftime(); can display the local time , detail useage refer to baidu
+
 
 ##srand
 
@@ -332,6 +373,38 @@
     
     ar rs libstack.a push.o stack.o  : static library
     gcc main.o -L./lib -lstack  : L, path; l, name, libstack.a  : call static library
+
+
+##floor ceil
+
+    
+    #include<math.h>
+    double floor(double arg)
+    floor(3.14); return 3
+    ceil(3.14);
+    floor(9.99);  return 9
+
+##stdin stdout stderr
+
+
+    stdout : can rediction to file, stderr cannot , only print to screen
+
+##exit
+
+    #include<stdlib.h>
+    exit(1);  :  quit process abnomally
+    exit(0);   return 0;   : the same effect in main , but in functions,
+    exit()  quit process, over the pragram; return(), will return the previous position
+
+
+
+
+
+
+
+
+
+
 
 
 
