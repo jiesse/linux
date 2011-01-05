@@ -81,6 +81,8 @@
     markdown : four blank is the least, Tab also less, 'comment' will display as the least 
     git checkout .. : .. previous commit mark
     git checkout master
+
+    if you change your pc, how to move git : first move the .ssh, then git clone the repository
 ## connect to internet
 
     sudo gedit /etc/network/interfaces
