@@ -1,6 +1,20 @@
 #c study  like a computer
 
 
+##array
+
+
+
+    int main(int argc, const char *argv[])
+    {
+        int b[2][3] = {1,2,3,4,5,6};
+        int (*p)[3];
+        p = b;
+        printf("%d%d\n",**p,**(p+1));
+
+        return 0;
+    }
+
 ##base
 
     "hello"; : const, address
