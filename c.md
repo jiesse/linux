@@ -1,6 +1,23 @@
 #c study  like a computer
 
 
+##frame buffer
+    /dev/fb0
+    /boot/grub/grub.cfg
+    vga= 0x318
+## data
+
+    all data in computer use bu code , >0 data , <0 data ,all;
+    10000000 -128;
+    00000101 5
+    11111011 -5
+
+    int  a = -10;
+    unsigned b = 6;
+    a + b == -4 ;  fault , tranlation to unsigned type
+    double a = 2.2;
+    float b = 2.2;
+    now a != b;
 ##array
 
 
@@ -111,6 +128,8 @@
     char *fgets(char *a,int size,FILE* stream);  :  if ok ; return a, or NULL ;end :1 ,'\n',2,size-1, 3, EOF
     fputs(const *s,FILE *stream); s write to file, '\n' , also write into; '\0', over; 
 
+    fgets gets acording to  '\n' to over
+    but gets receive '\n', fgets not
 
 
 ##atoi
