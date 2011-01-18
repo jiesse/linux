@@ -34,6 +34,9 @@
 
 ##base
 
+    global variable the less the good , maybe can put into struct
+    glabal var name the more long the good , locate the more short the good
+    data nomally cann't  use in code ,but define 
     "hello"; : const, address
     <string.h>; strcpy(stingname,"hello") contain cp '\0'; strlen(string); not contain '\0'
     while(*a++ = *b++) : *a = *b; while(*a); a++ ; b++

@@ -1,4 +1,17 @@
 #general
+## flash 10
+adobe flash player 10
+libflashplayer.so
+cp to :/usr/lib/flash-plugin
+then: sudo ln /usr/lib/flash-plugin/libflashplayer.so
+/usr/lib/mozilla/plugins/libflashplayer.so
+
+##software
+
+    vim 
+    git 
+    tig
+    manpages-dev
 
 ##base
 
@@ -24,14 +37,17 @@
     find . -name filename :
     sudo / -name libflashplayer.so : good , than locate
     grep -ni hello */* :
+    grep hello . -R 
     grep -ni hello * :  good use
     history | grep command 
     sudo !! : add permit to command
     locate : check filelist, so fast
+    wc -c filename  : check file bytes , usually use
 
 ## gladder (over the wall)
     q_ba_zai_xian_dai_li : go youtube
-    www.vpncup.com : go youtube
+    www.vpncup.com : go youtubesse126
+  
     freedom gate : www.dongtaiwang.com
 
 ##chinese input method
