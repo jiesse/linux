@@ -34,6 +34,12 @@
 
 ##base
 
+    man chown
+    man 2 chown : not same
+
+    man 1~7
+    man 1 command 2 linux system(libc) 3 stdc
+
     global variable the less the good , maybe can put into struct
     glabal var name the more long the good , locate the more short the good
     data nomally cann't  use in code ,but define 
@@ -132,7 +138,7 @@
     fputs(const *s,FILE *stream); s write to file, '\n' , also write into; '\0', over; 
 
     fgets gets acording to  '\n' to over
-    but gets receive '\n', fgets not
+    but fgets receive '\n', gets not
 
 
 ##atoi

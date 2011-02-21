@@ -1,1 +1,2 @@
-object = main.o 
+all:
+	gcc stu_system.c

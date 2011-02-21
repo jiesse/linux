@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define N 20
+#define N 10
 
 struct people
 {
@@ -59,7 +59,7 @@ int main(int argc, const char *argv[])
 
     printf(" \n");
     p = arr;
-    josephus(p, N, 5);
+    josephus(p, N, 3);
 
     for(p = arr; p < arr+N; p++)printf("%d ",(*p).id);    
     printf(" \n");
